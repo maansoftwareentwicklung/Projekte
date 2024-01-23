@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Temperaturwarner {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        int warnung = 0;
+        int error = 0;
+
+
+        System.out.println("Wählen Sie die Warnstufen aus. [1] Warnung 80 Error 100 [2] Warnung 90 Error 120 [3] Warnung 100 Error 150");
+        int stufennummer = scanner.nextInt();
+
+        if (stufennummer == 1) {
+
+            warnung = 80;
+            error = 100;
+
+        } else if (stufennummer == 2) {
+            warnung = 90;
+            error = 120;
+        } else if (stufennummer == 3) {
+            warnung = 100;
+            error = 150;
+        }
+        else{
+            System.out.println("Ungültig");
+
+        }
+
+
+        System.out.println("Geben Sie die Temperatur ein");
+        int temperatur = scanner.nextInt();
+
+        if (temperatur > error) {
+            System.out.println("Error, die Temperatur liegt ueber " + error + " Grad");
+        } else if (temperatur > warnung) {
+            System.out.println("Warnung, die Temperatur liegt ueber " + warnung + " Grad");
+        } else {
+            System.out.println("Alles Ok, die Temperatur uebersteigt " + temperatur + " Grad nicht");
+        }
+        scanner.close();
+    }
+}
+
